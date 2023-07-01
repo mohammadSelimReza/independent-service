@@ -1,0 +1,32 @@
+[
+  {
+    "id": "9496d72b-04ec-41f8-9bc3-0a7c9697be8e",
+
+    "name": "Person Lesson",
+
+    "price": 300,
+
+    "img": "https://i.ibb.co/XkCmBx5/personal.jpg",
+    "describtion": "personal training with me."
+  },
+  {
+    "id": "6e5593d3-557b-43cf-8dab-a5140faedfb0",
+
+    "name": "Group Lesson",
+
+    "price": 150,
+
+    "img": "https://i.ibb.co/ggHbL29/group.jpg",
+    "describtion": "will get lesson with 4-6people"
+  },
+  {
+    "id": "9c0c13c2-54e4-4001-809b-afbd9d84037d",
+
+    "name": "Master Arts",
+
+    "price": 500,
+
+    "img": "https://i.ibb.co/RpMZ3vK/pro.jpg",
+    "describtion": "get a pro for master arts"
+  }
+]

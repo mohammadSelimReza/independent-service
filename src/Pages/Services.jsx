@@ -1,5 +1,7 @@
+import Service from "../components/Home/Services/Service";
+
 const Services = () => {
-  return <div>This is service page</div>;
+  return <Service />;
 };
 
 export default Services;
