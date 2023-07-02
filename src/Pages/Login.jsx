@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Social from "../components/User/Social";
 import { AuthProvider } from "../context/userContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { loginUser } = useContext(AuthProvider);
@@ -51,6 +52,7 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
+              <span> <Link to={'/signup'}>Create an account?</Link>. New Here </span>
             </div>
           </form>
         </div>

@@ -14,7 +14,8 @@ import {
 export const AuthProvider = createContext();
 const UserContext = ({ children }) => {
   // value container:
-  const [user, setUser] = useState();
+  const [user,setUser] = useState(null);
+  const [loading,setLoading] = useState(true);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   // function
@@ -32,16 +33,17 @@ const UserContext = ({ children }) => {
   };
   // useEffect
   useEffect(() => {
-    const exit = onAuthStateChanged(auth, (currentUser) => {
-      console.log("show me the userName", currentUser);
-      setUser(currentUser);
-      console.log("with cuser", currentUser);
-      console.log("with user", user);
+   const unSigned = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        console.log('see me',currentUser);
+        setUser(currentUser);
+        setLoading(false);
+      } 
     });
-    return () => exit;
-  }, []);
+    return()=>unSigned();
+  },[])
   // value
-  const authinfo = { user, createUser, loginUser, socialLogin, logOut };
+  const authinfo = { user, loading, createUser, loginUser, socialLogin, logOut };
   // return
   return (
     <AuthProvider.Provider value={authinfo}>{children}</AuthProvider.Provider>

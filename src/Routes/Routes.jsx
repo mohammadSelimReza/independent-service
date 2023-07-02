@@ -7,6 +7,8 @@ import SignUp from "../Pages/SignUp";
 import Main from "../Pages/Main";
 import Checkout from "../components/Checkout/Checkout";
 import PrivateRoute from "./PrivateRoute";
+import About from "../Pages/About";
+import NotFoundPage from "../Pages/404";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
             <Checkout />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },

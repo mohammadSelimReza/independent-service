@@ -11,4 +11,21 @@
 6. service section has 3 services.
 7. clicking button takes me to to checkout page.
 8. i put anything i want in checkout page.
-9.
+9. If I reload the protected/private route (after login), this page wont redirect the user to the login page. Instead, it keeps the logged-in user on the protected route.
+<!--  -->
+10. I implement Email-password based authentication. I implement the Registration and the login page. Users should be able to toggle between Login and Registration view.
+11. added one extra social login system.
+12. login done and sign out button appear.
+<!--  -->
+13. Added two more routes. one route is blogs. On the blog page, you answered these three questions. This is not a protected route
+
+    13.1 Difference between authorization and authentication
+
+    13.2 Why are you using firebase? What other options do you have to implement authentication?
+
+    13.3 What other services does firebase provide other than authentication
+
+14. You have created an about me page. It is the about route. There i put my name and my
+image . However, I put a professional look picture. And wrote a small paragraph (3-5 lines) about my goal. And how I can work hard to achieve your goal.{incomplete}
+<!--  -->
+15. Created a 404 page (not found page)

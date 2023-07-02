@@ -3,7 +3,12 @@ import { Navigate } from "react-router-dom";
 import { AuthProvider } from "../context/userContext";
 import PropTypes from "prop-types";
 function PrivateRoute({ children }) {
-  const { user } = useContext(AuthProvider);
+  const { user, loading } = useContext(AuthProvider);
+  if(loading){
+    return <div className="flex justify-center align-middle">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  }
   if (!user) {
     return <Navigate to="/" replace />;
   }
