@@ -5,11 +5,14 @@ import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
-    <>
-      <Header />
-      <Outlet />
+    <div data-theme="light">
+      <div className="max-w-screen-xl mx-auto">
+        <Header />
+        <Outlet />
+      </div>
+
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext } from "react";
 import Social from "../components/User/Social";
 import { AuthProvider } from "../context/userContext";
@@ -52,7 +53,12 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
-              <span> <Link to={'/signup'}>Create an account?</Link>. New Here </span>
+              <span>
+                New Here?
+                <Link className="link link-secondary" to={"/signup"}>
+                  Let's create a new account
+                </Link>
+              </span>
             </div>
           </form>
         </div>

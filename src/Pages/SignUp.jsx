@@ -53,7 +53,12 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Registration</button>
-              <span>Already have an account. <Link to={'/login'}>Login?</Link> </span>
+              <span>
+                Already have an account.{" "}
+                <Link className="link link-secondary" to={"/login"}>
+                  Login?
+                </Link>{" "}
+              </span>
             </div>
           </form>
         </div>
