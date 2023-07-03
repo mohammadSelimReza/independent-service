@@ -1,8 +1,9 @@
 // import React from "react";
 import infoImg from "../../../img/website/info.jpg";
+import "./Info.css";
 const Info = () => {
   return (
-    <div className="flex my-8">
+    <div className="info-card flex my-8">
       <div className="w-1/3 flex justify-center">
         <img src={infoImg} />
       </div>

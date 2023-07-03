@@ -3,6 +3,7 @@ import banner1 from "../../../img/banner-photo/banner-01.jpg";
 import banner2 from "../../../img/banner-photo/banner-02.png";
 import banner3 from "../../../img/banner-photo/banner-03.jpg";
 import banner4 from "../../../img/banner-photo/banner-04.jpg";
+import "./Banner.css";
 const Banner = () => {
   return (
     <div>

@@ -29,3 +29,8 @@
 image . However, I put a professional look picture. And wrote a small paragraph (3-5 lines) about my goal. And how I can work hard to achieve your goal.{incomplete}
 <!--  -->
 15. Created a 404 page (not found page)
+16. done 9 meaningful git.
+<!-- bonus content -->
+17. gave all proper things to this website
+18. meaningful readme.md file
+19. made home page responsive.
