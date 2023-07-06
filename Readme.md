@@ -1,3 +1,8 @@
+This is readme file of this website.
+Github link(public:as i cant use private repo anymore): https://github.com/mohammadSelimReza/independent-service
+live address: https://dora-gym-2023.web.app/
+This webpage is created using these following things : viteJS with tailwind css(daisy library),react-router-dom, react hot toast.and have been deployed in firebase.
+
 <!-- _steps -->
 <!--  -->
 
