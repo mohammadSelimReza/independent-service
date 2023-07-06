@@ -1,15 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Social from "../components/User/Social";
 import { AuthProvider } from "../context/userContext";
 import { Link } from "react-router-dom";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import app from "../firebase/firebase.init";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
+  const auth = getAuth(app);
   const { loginUser } = useContext(AuthProvider);
+  const [userEmail, setUserEmail] = useState(null);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
+    setUserEmail(email);
     const password = form.password.value;
     form.reset();
     loginUser(email, password)
@@ -18,6 +24,17 @@ const Login = () => {
         console.log(user);
       })
       .catch((error) => console.error(error));
+  };
+  const passwordReset = () => {
+    if (!userEmail) {
+      toast.error("Type your email first");
+      return;
+    }
+    sendPasswordResetEmail(auth, userEmail)
+      .then(() => {
+        toast.success("password reset link sent to email.");
+      })
+      .catch((err) => console.error(err));
   };
   return (
     <div className="flex">
@@ -46,7 +63,11 @@ const Login = () => {
                 className="input input-bordered"
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <a
+                  href="#"
+                  onClick={passwordReset}
+                  className="label-text-alt link link-hover"
+                >
                   Forgot password?
                 </a>
               </label>

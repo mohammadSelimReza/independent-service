@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { AuthProvider } from "../../context/userContext";
 const Header = () => {
   const { user, logOut } = useContext(AuthProvider);
-  const handleSingOut = () => {
-    logOut();
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
   };
   const menuItems = (
     <div className="flex">
@@ -50,7 +52,7 @@ const Header = () => {
               {menuItems}
               <div>
                 {user?.uid ? (
-                  <button className="btn btn-neutral" onClick={handleSingOut}>
+                  <button className="btn btn-neutral" onClick={handleLogout}>
                     Sign Out
                   </button>
                 ) : (
@@ -76,9 +78,12 @@ const Header = () => {
         <div className="navbar-end">
           <div className="visible max-[640px]:hidden">
             {user?.uid ? (
-              <button className="btn btn-neutral" onClick={handleSingOut}>
-                Sign Out
-              </button>
+              <>
+                <h2>{user.displayName}</h2>
+                <button className="btn btn-neutral" onClick={handleLogout}>
+                  Sign Out
+                </button>
+              </>
             ) : (
               <>
                 <Link className="mx-2" to="/signup">

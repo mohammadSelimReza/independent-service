@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "reza-service-provider",
   storageBucket: "reza-service-provider.appspot.com",
   messagingSenderId: "76775919617",
-  appId: "1:76775919617:web:2292c6ea2f0eb614603000",
+  appId: "1:76775919617:web:6e9cc5689bbd330d603000",
 };
 
 // Initialize Firebase

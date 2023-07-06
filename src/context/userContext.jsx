@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -14,8 +15,8 @@ import {
 export const AuthProvider = createContext();
 const UserContext = ({ children }) => {
   // value container:
-  const [user,setUser] = useState(null);
-  const [loading,setLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   // function
@@ -28,22 +29,33 @@ const UserContext = ({ children }) => {
   const socialLogin = () => {
     return signInWithPopup(auth, provider);
   };
+  const verifyEmail = () => {
+    return sendEmailVerification(auth.currentUser);
+  };
   const logOut = () => {
     return signOut(auth);
   };
   // useEffect
   useEffect(() => {
-   const unSigned = onAuthStateChanged(auth, (currentUser) => {
+    const unSigned = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        console.log('see me',currentUser);
+        console.log("see me", currentUser);
         setUser(currentUser);
         setLoading(false);
-      } 
+      }
     });
-    return()=>unSigned();
-  },[])
+    return () => unSigned();
+  }, []);
   // value
-  const authinfo = { user, loading, createUser, loginUser, socialLogin, logOut };
+  const authinfo = {
+    user,
+    loading,
+    createUser,
+    loginUser,
+    socialLogin,
+    logOut,
+    verifyEmail,
+  };
   // return
   return (
     <AuthProvider.Provider value={authinfo}>{children}</AuthProvider.Provider>

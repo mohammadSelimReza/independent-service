@@ -36,3 +36,34 @@ image . However, I put a professional look picture. And wrote a small paragraph 
 19. made home page responsive.
 20. not that much clean but run-and-go
 21. showing error ..
+22. done doing email verifying.
+23. password reset done.
+<!-- 
+
+
+24. Definition:
+
+Authentication verifies the identity of a user or entity, ensuring they are who they claim to be.
+Authorization determines what actions or resources a user is allowed to access or perform based on their authenticated identity.
+
+1.Focus:
+
+Authentication focuses on verifying identity, ensuring the user is legitimate and not an imposter.
+Authorization focuses on determining the user's privileges or permissions and what they are allowed to do within the system.
+
+3.Purpose:
+
+Authentication establishes trust and confirms the identity of the user to grant access to the system.
+Authorization controls access rights and permissions to specific resources or functionalities based on the authenticated identity.
+
+4.Process:
+
+Authentication typically involves the use of credentials (e.g., username/password, biometrics) to validate identity.
+Authorization involves evaluating the authenticated identity against predefined rules or policies to determine access privileges.
+
+5.Sequence:
+
+Authentication occurs before authorization. Users need to be authenticated first to establish their identity.
+Authorization happens after authentication. Once a user is authenticated, the system determines their access rights based on authorization rules.
+
+-->

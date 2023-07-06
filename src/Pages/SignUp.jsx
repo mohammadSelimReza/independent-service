@@ -2,9 +2,10 @@ import { useContext, useState } from "react";
 import Social from "../components/User/Social";
 import { AuthProvider } from "../context/userContext";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { createUser } = useContext(AuthProvider);
+  const { createUser, verifyEmail } = useContext(AuthProvider);
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -86,8 +87,18 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        handleVerifyEmail();
+        toast.success("verify you email");
       })
       .catch((error) => console.error(error));
+  };
+
+  const handleVerifyEmail = () => {
+    verifyEmail()
+      .then(() => {
+        console.log("email sent");
+      })
+      .catch((err) => console.error(err));
   };
   return (
     <div className="flex">
@@ -123,11 +134,6 @@ const Login = () => {
                 className="input input-bordered"
               />
               {error.password && <span className="err">{error.password}</span>}
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
             </div>
             {/* confirm password */}
             <div className="form-control">
