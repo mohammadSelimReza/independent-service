@@ -151,11 +151,6 @@ const Login = () => {
               {error.confirmPassword && (
                 <span className="err">{error.confirmPassword}</span>
               )}
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Registration</button>
