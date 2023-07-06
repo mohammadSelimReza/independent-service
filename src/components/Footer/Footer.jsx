@@ -3,9 +3,9 @@ const Footer = () => {
     <footer className="footer p-10 bg-neutral text-neutral-content">
       <div>
         <p>
-          ACME Industries Ltd.
+          Dora Gym Trainer.
           <br />
-          Providing reliable tech since 1992
+          Providing reliable service since 2010
         </p>
       </div>
       <div>
