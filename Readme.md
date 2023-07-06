@@ -34,3 +34,5 @@ image . However, I put a professional look picture. And wrote a small paragraph 
 17. gave all proper things to this website
 18. meaningful readme.md file
 19. made home page responsive.
+20. not that much clean but run-and-go
+21. showing error ..
